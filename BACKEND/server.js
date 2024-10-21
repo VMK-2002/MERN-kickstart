@@ -3,23 +3,23 @@ import dotenv from 'dotenv';
 dotenv.config();
 import {connectDB} from "./config/db.js";
 import productRoute from './Router/productRoute.js';
-import cors from "cors";
+//import cors from "cors";
 import path from "path";
 
 
 const app = express();
 
-app.use(cors());
+//app.use(cors());
 
 app.use(express.json());
 
 app.use("/api/products", productRoute);
 
-const corsOptions = {
-    origin: 'http://localhost:5173', // Frontend origin
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type'],
-  };
+// const corsOptions = {
+//     origin: 'http://localhost:5173', // Frontend origin
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     allowedHeaders: ['Content-Type'],
+//   };
 
 const port = process.env.PORT;
 const __dirname = path.resolve();
