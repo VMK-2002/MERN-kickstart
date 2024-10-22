@@ -9,7 +9,7 @@ import path from "path";
 
 const app = express();
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
