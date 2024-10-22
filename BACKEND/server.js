@@ -15,11 +15,11 @@ app.use(express.json());
 
 app.use("/api/products", productRoute);
 
-// const corsOptions = {
-//     origin: 'http://localhost:5173', // Frontend origin
-//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//     allowedHeaders: ['Content-Type'],
-//   };
+const corsOptions = {
+    origin: process.env.NODE_ENV === 'production' ? 'https://mern-kickstart.onrender.com' : 'http://localhost:5173',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type'],
+  };
 
 const port = process.env.PORT || 5000;
 const __dirname = path.resolve();
