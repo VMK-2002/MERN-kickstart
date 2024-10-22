@@ -18,6 +18,7 @@ app.use("/api/products", productRoute);
 const corsOptions = {
     origin: process.env.NODE_ENV === 'production' ? 'https://mern-kickstart.onrender.com' : 'http://localhost:5173',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
     allowedHeaders: ['Content-Type'],
   };
 
