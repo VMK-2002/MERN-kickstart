@@ -9,7 +9,7 @@ import path from "path";
 
 const app = express();
 
-app.use(cors(corsOptions));
+
 
 app.use(express.json());
 
@@ -20,6 +20,8 @@ const corsOptions = {
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type'],
   };
+
+app.use(cors(corsOptions));
 
 const port = process.env.PORT || 5000;
 const __dirname = path.resolve();
